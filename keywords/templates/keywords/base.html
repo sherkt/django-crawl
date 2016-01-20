@@ -1,0 +1,20 @@
+{% load staticfiles %}
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}Crawl Assignment{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'keywords/styles.css' %}">
+  </head>
+  <body>
+    <div id="main-container">
+      <div id="top-nav">
+        <ul>
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'crawl' %}">Crawl</a></li>
+        </ul>
+      </div>
+      {% block content %}{% endblock %}
+    </div>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+{% extends "keywords/base.html" %}
+
+{% block title %}Crawl form{% endblock %}
+
+{% block content %}
+<h1>Crawl page</h1>
+
+<div>
+  <form method="post" action="{% url 'results' %}">
+    {% csrf_token %}
+    {% if form.errors %}
+    <div style="border: 1px solid #ddd; margin-bottom: 10px; width: 300px; padding: 10px;">
+      <p>Errors:</p>
+      {{ form.errors }}
+    </div>
+    {% endif %}
+    <label>Link</label> <input name="url" value="{{ request.GET.url }}"><br>
+    <label>Keyword</label> <input name="keyword" value="{{ request.GET.keyword }}"><br>
+    <button type="submit" class="btn">Submit</button>
+  </form>
+</div>
+
+{% endblock %}

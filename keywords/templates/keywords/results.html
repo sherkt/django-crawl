@@ -1,0 +1,36 @@
+{% extends "keywords/base.html" %}
+
+{% block title %}Results{% endblock %}
+
+{% block content %}
+<h1>Results page</h1>
+<h2>Results:</h2>
+{% if result %}
+<p>URL: {{ result.url }}</p>
+<p>Keyword: {{ keyword.name }}</p>
+<p>Keyword count: {{ result.word_count }}</p>
+<p>Keyword density: {{ result.density|floatformat:2 }}%</p>
+<h2>Averages across all sites ({{ allresults.count }}):</h2>
+<p><em>Excluding sites with 0 keyword count.</em></p>
+<p>Keyword count: {{ keyword.average_count|floatformat:0 }}</p>
+<p>Keyword density: {{ keyword.average_density|floatformat:2 }}%</p>
+
+<h2>Keyword results:</h2>
+<table>
+  <thead>
+    <td>URL</td>
+    <td>Word Count</td>
+    <td>Density</td>
+  </thead>
+{% for site in allresults %}
+<tr>
+<td>{{ site.url }}</td><td>{{ site.word_count }}</td><td>{{ site.density }}%</td>
+</tr>
+{% endfor %}
+</table>
+<br>
+{% else %}
+<p>No results. Please make sure you entered a url and keyword.</p>
+{% endif %}
+<a class="btn" href="{% url 'crawl' %}?url={{ result.url }}&keyword={{ result.keyword }}">Go back</a>
+{% endblock %}

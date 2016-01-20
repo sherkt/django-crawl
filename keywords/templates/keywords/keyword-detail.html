@@ -1,0 +1,14 @@
+{% extends "keywords/base.html" %}
+
+{% block content %}
+<h1>Keyword detail page</h1>
+{% if keyword %}
+{{ keyword.name }}
+{% else %}
+Sorry, that keyword doesn't exist (anymore).
+{% endif %}
+<h2>Other keywords</h2>
+{% for keyword in other_keywords %}
+<a href="{% url 'keyword-detail' keyword.pk %}">{{ keyword.name }}</a><br>
+{% endfor %}
+{% endblock %}

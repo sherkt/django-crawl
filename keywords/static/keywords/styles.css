@@ -1,0 +1,74 @@
+body {
+  font-family: sans-serif;
+  font-size: 12px;
+  background-color: #9ad1e3;
+}
+#main-container {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 30px;
+  background-color: #fff;
+}
+label {
+  display: inline-block;
+  width: 120px;
+  margin-bottom: 10px;
+}
+.btn {
+  background-color: #105290;
+  border: 2px solid #105290;
+  color: #fff;
+  display: inline-block;
+  line-height: 1.5;
+  min-width: 7em;
+  padding: .5em 1em;
+  text-decoration: none;
+  text-align: center;
+  font-size: 11px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.btn-red {
+  background-color: #ff1b2d;
+  border: 2px solid #ff1b2d;
+  color: #fff;
+}
+input {
+  width: 240px;
+}
+table {
+  border-collapse: collapse;
+}
+table, th, td {
+  border: 1px solid black;
+}
+td {
+  padding: 10px;
+  font-size: 13px;
+}
+#top-nav ul {
+  margin: 10px 0 10px 0;
+  padding: 0 0 10px;
+  border-bottom: 1px solid #ddd;
+}
+#top-nav li {
+  background-color: #e8edf1;
+  border: 1px solid #cbd2d8;
+  list-style: none;
+  display: inline-block;
+  margin: 0;
+  padding: 4px 4px;
+  width: 60px;
+  text-align: center;
+}
+#top-nav li a {
+  text-decoration: none;
+  color: #000;
+}
+#top-nav li a:visited {
+  color: #000;
+}
+#top-nav li a:hover {
+  text-decoration: underline;
+}
