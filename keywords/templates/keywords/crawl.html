@@ -1,23 +1,43 @@
 {% extends "keywords/base.html" %}
 
+{% load keyword_tags %}
+
 {% block title %}Crawl form{% endblock %}
 
 {% block content %}
 <h1>Crawl page</h1>
 
-<div>
-  <form method="post" action="{% url 'results' %}">
+<div id="crawl-form">
+  <form method="post" action="">
     {% csrf_token %}
     {% if form.errors %}
-    <div style="border: 1px solid #ddd; margin-bottom: 10px; width: 300px; padding: 10px;">
-      <p>Errors:</p>
-      {{ form.errors }}
+    <div class="errorbox">
+      <span>Please correct the error{{ form.errors|pluralize }} below:</span>
     </div>
     {% endif %}
-    <label>Link</label> <input name="url" value="{{ request.GET.url }}"><br>
-    <label>Keyword</label> <input name="keyword" value="{{ request.GET.keyword }}"><br>
+    {% if error %}
+      <p>There was an error. {{ error }}</p>
+    {% endif %}
+    <label for="id_url">Link</label> <input id="id_url" name="url" value="{{ request.POST.url }}">
+    <span>{{ form.url.errors }}</span>
+    <br>
+    <label for="id_keyword">Keyword</label> <input id="id_keyword" name="keyword" value="{{ request.POST.keyword }}">
+    <span>{{ form.keyword.errors }}</span>
+    <br>
+    
     <button type="submit" class="btn">Submit</button>
   </form>
 </div>
-
+{% if request.session.result_id %}
+  {% get_result request.session.result_id as result %}
+  {% if result %}
+  <div id="previous-search-info">
+    <p>You might not care, but here's what your last successful search terms were:</p>
+    <ul>
+      <li><span>Link:</span> {{ result.url }}</li>
+      <li><span>Keyword:</span> {{ result.keyword }}</li>
+    </ul>
+  </div>
+  {% endif %}
+{% endif %}
 {% endblock %}

@@ -8,13 +8,18 @@
   </head>
   <body>
     <div id="main-container">
-      <div id="top-nav">
-        <ul>
-          <li><a href="{% url 'index' %}">Home</a></li>
-          <li><a href="{% url 'crawl' %}">Crawl</a></li>
-        </ul>
+      <div id="main-content">
+        <div id="top-nav">
+          <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'crawl' %}">Crawl</a></li>
+          </ul>
+        </div>
+        {% block content %}{% endblock %}
       </div>
-      {% block content %}{% endblock %}
+      <div id="footer-area">
+        <p>A test page for crawling. &copy; Trevor Sherk</p>
+      </div>
     </div>
   </body>
 </html>

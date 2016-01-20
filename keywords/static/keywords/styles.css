@@ -4,17 +4,21 @@ body {
   background-color: #9ad1e3;
 }
 #main-container {
-  width: 500px;
+  width: 540px;
   margin-left: auto;
   margin-right: auto;
+}
+#main-content {
   padding: 20px 30px;
   background-color: #fff;
 }
-label {
-  display: inline-block;
-  width: 120px;
-  margin-bottom: 10px;
+
+/* footer */
+#footer-area {
+  text-align: center;
+  color: #3b3939;
 }
+
 .btn {
   background-color: #105290;
   border: 2px solid #105290;
@@ -34,9 +38,7 @@ label {
   border: 2px solid #ff1b2d;
   color: #fff;
 }
-input {
-  width: 240px;
-}
+
 table {
   border-collapse: collapse;
 }
@@ -71,4 +73,56 @@ td {
 }
 #top-nav li a:hover {
   text-decoration: underline;
+}
+
+
+/* forms */
+label {
+  display: inline-block;
+  width: 120px;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 280px;
+}
+input#id_keyword {
+  width: 180px;
+}
+
+ul.errorlist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+div.errorbox {
+  background-color: #faeca0;
+  margin-bottom: 20px;
+  width: 350px;
+  padding: 10px;
+}
+
+#previous-search-info {
+  border-top: 1px solid #ddd;
+  padding-top: 5px;
+  margin-top: 30px;
+}
+
+#previous-search-info p {
+  margin: 10px 0 5px 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+#previous-search-info ul {
+  margin:0 0 10px 0;
+  padding: 0;
+}
+#previous-search-info ul li {
+  list-style: none;
+  padding-top: 4px;
+}
+#previous-search-info span {
+  display: inline-block;
+  width: 120px;
 }
