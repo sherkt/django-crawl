@@ -18,11 +18,12 @@ class Keyword(models.Model):
 class Result(models.Model):
     url = models.URLField(max_length=200)
     keyword = models.ForeignKey("keywords.Keyword")
+    title = models.CharField(max_length=200, blank=True)
     word_count = models.PositiveIntegerField()
     density = models.DecimalField(max_digits=5, decimal_places=2)
     date_created = models.DateTimeField(auto_now_add=True)
     last_activity = models.DateTimeField(default=now)
-    
+
     def __str__(self):
         return u"%s" % (self.url)
     

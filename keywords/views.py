@@ -22,7 +22,6 @@ def crawl(request):
             cd = form.cleaned_data
             
             page, error = get_page(cd["url"])
-            
             if error:
                 return render(request, 'keywords/crawl.html', dict(
                     form=form, error=error
