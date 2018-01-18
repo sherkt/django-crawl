@@ -3,7 +3,9 @@
 {% block content %}
 <h1>Keyword detail page</h1>
 {% if keyword %}
-{{ keyword.name }}
+<p><span class="bolder">Keyword:</span> {{ keyword.name }}</p>
+<p><span class="bolder">Average word count:</span> {{ keyword.average_count }}</p>
+</p><span class="bolder">Average density:</span> {{ keyword.average_density }}</p>
 {% else %}
 Sorry, that keyword doesn't exist (anymore).
 {% endif %}

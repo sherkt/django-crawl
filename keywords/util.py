@@ -125,7 +125,6 @@ def calculate_density(nk, tw, keyword):
 
 def scraper(page, keyword):
     tree = html.fromstring(page.content)
-    
     soup = BeautifulSoup(page.content, "lxml")
     
     words = []

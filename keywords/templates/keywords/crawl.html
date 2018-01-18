@@ -32,12 +32,12 @@
   {% get_result request.session.result_id as result %}
   {% if result %}
   <div id="previous-search-info">
-    <p>By the way, here's what your last successful search terms were:</p>
+    <p>By the way, here's what your last successful search term was:</p>
     <ul>
-      <li><span>Link:</span> {{ result.url }}</li>
-      <li><span>Keyword:</span> {{ result.keyword }}</li>
-      <li><span>Count:</span> {{ result.word_count }}</li>
-      <li><span>Density:</span> {{ result.density }}%</li>
+      <li><span>Link:</span>{{ result.url }}</li>
+      <li><span>Keyword:</span>{{ result.keyword }}</li>
+      <li><span>Count:</span>{{ result.word_count }}</li>
+      <li><span>Density:</span>{{ result.density }}%</li>
     </ul>
   </div>
   {% endif %}
